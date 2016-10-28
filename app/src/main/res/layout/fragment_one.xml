@@ -5,30 +5,36 @@
     android:orientation="vertical"
     android:baselineAligned="false">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/wapper_icon"
         android:orientation="vertical"
         android:padding="10dp">
 
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/recycleritem"
+                android:overScrollMode="never" />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/myimage1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/hello" />
+
+
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layout"
-        android:background="#00308F"
+        android:id="@+id/wapper_bottom"
+        android:background="@android:color/holo_blue_light"
         android:layout_weight="1">
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:onClick="click"
-            android:text="CLICK" />
+
     </RelativeLayout>
 
 

@@ -4,7 +4,10 @@ import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.View.OnDragListener;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+
+import com.example.kanchapi.testapp.R;
 
 public class MyDragListener implements OnDragListener{
     int x;
@@ -27,13 +30,23 @@ public class MyDragListener implements OnDragListener{
             y = (int)event.getY();
             Log.d("DRAG", x + "," + y);
         }
-        if(action == DragEvent.ACTION_DRAG_ENDED){
+        if(action == DragEvent.ACTION_DROP){
             Log.d("DRAG", "Dropped at " + x + "," + y);
 //            view.layout(x-(view.getWidth()/2), y-(view.getHeight()/2), x+(view.getWidth()/2), y+(view.getHeight()/2));
             view.setX(x-(view.getWidth()/2));
             view.setY(y-(view.getHeight()/2));
             view.setVisibility(View.VISIBLE);
+
         }
+
+//        if(action == DragEvent.ACTION_DROP){
+//            ViewGroup owner = (ViewGroup) view.getParent();
+//            owner.removeView(view);
+//            RelativeLayout container = (RelativeLayout) v;
+//            container.addView(view);
+//            view.setVisibility(View.VISIBLE);
+//        }
+
         return true;
     }
 }
